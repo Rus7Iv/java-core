@@ -1,5 +1,4 @@
-
-public class String {
+public class Strings {
     public static void main(String[] args){
         java.lang.String s = "Hello";
         java.lang.String space = " ";
