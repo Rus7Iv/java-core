@@ -3,12 +3,13 @@ public class ClassesAndObject {
         Person person1 = new Person();
         person1.name = "Roman";
         person1.age = 13;
-        System.out.println("Меня зовут "+person1.name+". Мне "+person1.age+" лет");
+        person1.sayHello();
+        person1.speak();
 
         Person person2 = new Person();
         person2.name = "Vladimir";
         person2.age = 20;
-        System.out.println("Меня зовут "+person2.name+". Мне "+person2.age+" лет");
+        person2.speak();
     }
 }
 
@@ -18,5 +19,12 @@ class Person{
     //2. Действия, которые он может соыершать (методы)
     String name;
     int age;
-
+    void speak(){
+        for(int i = 0; i<3; i++) {
+            System.out.println("Меня зовут " + name + ", мне " + age + " лет");
+        }
+    }
+    void sayHello(){
+        System.out.println("Hello!");
+    }
 }
