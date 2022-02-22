@@ -1,27 +1,39 @@
 public class ClassesAndObject {
     public static void main(String[] args) {
         Person person1 = new Person();
-        person1.setNameAndAge("Roman", 13);
-
-        String s1 = "Vladimir";
-        Person person2 = new Person();
-        person2.setNameAndAge(s1, 20);
-
-        person1.speak();
-        person2.speak();
+        person1.setName("какое-то имя");
+        person1.setAge(13);
+        System.out.println("Выводим значения в main-методе: "+person1.getName());
+        System.out.println("Выводим значения в main-методе: "+person1.getAge());
     }
 }
 
 class Person{
-    //У класса могут быть
-    //1. Данные (поля)
-    //2. Действия, которые он может соыершать (методы)
-    String name;
-    int age;
+    private String name;
+    private int age;
 
-    void setNameAndAge(String username, int userage){
-        name = username;
-        age = userage;
+    public void setName(String username) {
+        if(username.isEmpty()){
+            System.out.println("Ошибка! Ты ввёл пустое имя");
+        } else {
+            name = username;
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setAge(int userage) {
+        if(userage<0){
+            System.out.println("Ошибка! Возраст не может быть меньше 0");
+        }else {
+            age = userage;
+        }
+    }
+
+    public int getAge() {
+        return age;
     }
 
     int calculateYearsToRetirement() {
