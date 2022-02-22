@@ -1,21 +1,14 @@
 public class ClassesAndObject {
     public static void main(String[] args) {
         Person person1 = new Person();
-        person1.name = "Roman";
-        person1.age = 13;
-        //person1.sayHello();
-        //person1.speak();
+        person1.setNameAndAge("Roman", 13);
 
+        String s1 = "Vladimir";
         Person person2 = new Person();
-        person2.name = "Vladimir";
-        person2.age = 20;
-       //person2.speak();
+        person2.setNameAndAge(s1, 20);
 
-        int year1 = person1.calculateYearsToRetirement();
-        int year2 = person2.calculateYearsToRetirement();
-
-        System.out.println("Количество лет до пенсии первому человеку - "+year1);
-        System.out.println("Количество лет до пенсии второму человеку - "+year2);
+        person1.speak();
+        person2.speak();
     }
 }
 
@@ -25,6 +18,12 @@ class Person{
     //2. Действия, которые он может соыершать (методы)
     String name;
     int age;
+
+    void setNameAndAge(String username, int userage){
+        name = username;
+        age = userage;
+    }
+
     int calculateYearsToRetirement() {
         int years = 65 - age;
         return years;
